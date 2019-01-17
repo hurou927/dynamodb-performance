@@ -1,0 +1,17 @@
+0.298339,ms,GetSession
+290.797113,ms,GetItem
+17.935369,ms,GetItem
+18.819746,ms,GetItem
+18.038769,ms,GetItem
+17.645271,ms,GetItem
+17.566078,ms,GetItem
+18.636600,ms,GetItem
+18.061114,ms,GetItem
+18.287078,ms,GetItem
+20.282486,ms,GetItem
+17.574241,ms,GetItem
+18.217631,ms,GetItem
+18.185988,ms,GetItem
+18.064990,ms,GetItem
+17.656564,ms,GetItem
+18.434747,ms,GetItem

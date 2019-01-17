@@ -1,0 +1,16 @@
+307.212263,ms,GetItem
+18.520838,ms,GetItem
+18.078864,ms,GetItem
+18.268695,ms,GetItem
+23.748992,ms,GetItem
+20.378246,ms,GetItem
+32.496353,ms,GetItem
+21.145210,ms,GetItem
+20.157416,ms,GetItem
+25.689369,ms,GetItem
+19.521298,ms,GetItem
+19.864435,ms,GetItem
+19.698866,ms,GetItem
+21.030897,ms,GetItem
+21.437131,ms,GetItem
+18.585125,ms,GetItem
