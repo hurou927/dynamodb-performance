@@ -59,8 +59,8 @@ Hardware:
 ```
 
 
-|  Lang. |  Time |
-| ------ | ---- |
-|  go    |  294 ms  |
-|  go(v2)|  295 ms  |
-| node   |  191 ms| 
+|  Lang. |  Time(1st) | Time(>=2st)|
+| ------ | ---- | ---- |
+|  go    |  294 ms  | 60 ms |
+|  go(v2)|  295 ms  | 17ms |
+| node   |  191 ms| 17 ms |
