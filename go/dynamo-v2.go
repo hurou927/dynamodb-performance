@@ -36,6 +36,8 @@ func main()  {
   //   id:   "66a36e77-fd00-3779-8097-17841f998f4d",
   // }
   // item, err := dynamodbattribute.MarshalMap(r)
+
+  ts.StampWithTag("GetItem 0");
   input := &dynamodb.GetItemInput{
     Key: map[string]dynamodb.AttributeValue{
       "id": {
@@ -44,7 +46,6 @@ func main()  {
     },
     TableName: aws.String("performance-test-dynamodb"),
   }
-  ts.StampWithTag("GetItem");
   result, err := svc.GetItemRequest(input).Send();
     if err != nil {
       if aerr, ok := err.(awserr.Error); ok {

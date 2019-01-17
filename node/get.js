@@ -11,24 +11,30 @@ const TableName = 'performance-test-dynamodb';
 
 (async () => {
   try {
-    logger.debug(TableName);
+  logger.debug(TableName);
 
-    const params = {
-      TableName,
-      Key: {
-        id: '10'
-      }
-    };
 
-    const documentClient = new AWS.DynamoDB.DocumentClient();
+  const documentClient = new AWS.DynamoDB.DocumentClient();
+
+  let result;
+  let sum = 0;
+  for(let i=0; i<16; i=i+1){
 
     const start = new Date().getTime(); 
-    const result = await documentClient.get(params).promise();
+    result = await documentClient.get({
+        TableName,
+        Key: {
+          id: `${i}`
+        }
+      }).promise();
     const end = new Date().getTime(); 
-    logger.debug(result);
-    logger.info(`${end-start},ms`);
+    logger.info(`${end-start},ms`)
+    sum = sum + (end-start);
+  }
+  logger.debug(result.Item.id);
+  logger.info(`average,${sum/16},ms`);
 
   } catch (error) {
-    logger.error(error);
+  logger.error(error);
   }
 })()

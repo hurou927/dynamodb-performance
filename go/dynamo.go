@@ -10,6 +10,7 @@ import (
   "./sub"
 )
 
+
 func main()  {
   ts := timeStamp.NewTimeStamp(10)
 
@@ -21,7 +22,8 @@ func main()  {
   ts.StampWithTag("InitSession");
   svc := dynamodb.New(sess)
 
-  ts.StampWithTag("Ready...");
+  
+  ts.StampWithTag("GetItem 0");
   input := &dynamodb.GetItemInput{
     Key: map[string]*dynamodb.AttributeValue{
       "id": {
@@ -30,7 +32,6 @@ func main()  {
     },
     TableName: aws.String("performance-test-dynamodb"),
   }
-  ts.StampWithTag("GetItem");
   result, err := svc.GetItem(input)
     if err != nil {
       if aerr, ok := err.(awserr.Error); ok {
@@ -52,9 +53,39 @@ func main()  {
       fmt.Println(err.Error())
     }
     return
-  }  
+  }
+  ts.StampWithTag("GetItem 1");
+
+  _, _ = svc.GetItem(&dynamodb.GetItemInput{
+    Key: map[string]*dynamodb.AttributeValue{
+      "id": {
+        S: aws.String("1"),
+      },
+    },
+    TableName: aws.String("performance-test-dynamodb"),
+  })
+
+  ts.StampWithTag("GetItem 2");
+  _, _  = svc.GetItem(&dynamodb.GetItemInput{
+    Key: map[string]*dynamodb.AttributeValue{
+      "id": {
+        S: aws.String("2"),
+      },
+    },
+    TableName: aws.String("performance-test-dynamodb"),
+  })
+  ts.StampWithTag("GetItem 2");
+  _, _  = svc.GetItem(&dynamodb.GetItemInput{
+    Key: map[string]*dynamodb.AttributeValue{
+      "id": {
+        S: aws.String("2"),
+      },
+    },
+    TableName: aws.String("performance-test-dynamodb"),
+  })
+  
   ts.Stamp()
   ts.Print()
-  fmt.Println(result)
+  fmt.Println(result.Item["id"])
 
 }
