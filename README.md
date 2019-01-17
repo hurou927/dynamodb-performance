@@ -61,6 +61,6 @@ Hardware:
 
 |  Lang. |  Time(1st) | Time(>=2st)|
 | ------ | ---- | ---- |
-|  go    |  294 ms  | 60 ms |
-|  go(v2)|  295 ms  | 17ms |
-| node   |  191 ms| 17 ms |
+|  go    |  294 ms  | 19 ms |
+|  go(v2)|  295 ms  | 18 ms |
+| node   |  191 ms| 55 ms |
