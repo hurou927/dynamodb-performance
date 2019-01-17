@@ -36,3 +36,31 @@ $ cd node
 $ yarn
 $ node get
 ```
+
+
+## result
+
+macbook pro
+```
+$ system_profiler SPHardwareDataType
+Hardware:
+
+    Hardware Overview:
+
+      Model Name: MacBook Pro
+      Model Identifier: MacBookPro13,1
+      Processor Name: Intel Core i5
+      Processor Speed: 2 GHz
+      Number of Processors: 1
+      Total Number of Cores: 2
+      L2 Cache (per Core): 256 KB
+      L3 Cache: 4 MB
+      Memory: 16 GB
+```
+
+
+|  Lang. |  Time |
+| ------ | ---- |
+|  go    |  294 ms  |
+|  go(v2)|  295 ms  |
+| node   |  191 ms| 
