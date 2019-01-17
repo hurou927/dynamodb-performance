@@ -1,0 +1,27 @@
+service: perf
+
+provider:
+  name: aws
+  region: ap-northeast-1
+  runtime: nodejs8.10
+  stage: perf
+
+
+resources:
+  Resources:
+    ServiceInfoDynamoDB:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        TableName: performance-test-dynamodb
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
