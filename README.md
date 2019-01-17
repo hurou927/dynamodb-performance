@@ -23,7 +23,7 @@ $ cd go
 $ go build dynamo.go
 $ ./dynamo
 
-# aws-sdk-go2
+# aws-sdk-go-v2
 $ cd go
 $ go build dynamo-v2.go
 $ ./dynamo-v2
