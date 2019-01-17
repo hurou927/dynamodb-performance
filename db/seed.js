@@ -13,25 +13,25 @@ const TableName = 'performance-test-dynamodb';
 
 
 (async () => {
-    try {
-        logger.debug(TableName);
+  try {
+    logger.debug(TableName);
 
-        const params = { RequestItems: { [TableName]: [] } }
-        data.items.forEach(function (v, index) {
-            params['RequestItems'][TableName].push({
-                PutRequest: {
-                    Item: v
-                }
-            });
-        })
+    const params = { RequestItems: { [TableName]: [] } }
+    data.items.forEach(function (v, index) {
+      params['RequestItems'][TableName].push({
+        PutRequest: {
+          Item: v
+        }
+      });
+    })
 
-        // logger.debug(params);
+    // logger.debug(params);
 
-        const result = await dynamodb.batchWrite(params).promise();
-        logger.debug(result);
+    const result = await dynamodb.batchWrite(params).promise();
+    logger.debug(result);
 
 
-    } catch (error) {
-        logger.error(error);
-    }
+  } catch (error) {
+    logger.error(error);
+  }
 })()

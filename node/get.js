@@ -10,25 +10,25 @@ const dynamodb = new AWS.DynamoDB.DocumentClient();
 const TableName = 'performance-test-dynamodb';
 
 (async () => {
-    try {
-        logger.debug(TableName);
+  try {
+    logger.debug(TableName);
 
-        const params = {
-            TableName,
-            Key: {
-                id: '10'
-            }
-        };
+    const params = {
+      TableName,
+      Key: {
+        id: '10'
+      }
+    };
 
-        const documentClient = new AWS.DynamoDB.DocumentClient();
+    const documentClient = new AWS.DynamoDB.DocumentClient();
 
-        const start = new Date().getTime(); 
-        const result = await documentClient.get(params).promise();
-        const end = new Date().getTime(); 
-        logger.debug(result);
-        logger.info(`${end-start},ms`);
+    const start = new Date().getTime(); 
+    const result = await documentClient.get(params).promise();
+    const end = new Date().getTime(); 
+    logger.debug(result);
+    logger.info(`${end-start},ms`);
 
-    } catch (error) {
-        logger.error(error);
-    }
+  } catch (error) {
+    logger.error(error);
+  }
 })()
