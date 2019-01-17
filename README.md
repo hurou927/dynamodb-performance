@@ -11,6 +11,12 @@ $ node seed
 
 ## go
 
+```                                   
+$ go get github.com/jmespath/go-jmespath //require???   
+$ go get github.com/aws/aws-sdk-go-v2                       
+$ go get github.com/aws/aws-sdk-go
+```
+
 ```
 # aws-sdk-go
 $ cd go
